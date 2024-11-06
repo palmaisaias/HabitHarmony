@@ -65,7 +65,7 @@ const Profile = () => {
           {/* User Information */}
           <Grid item xs={12} sm={8}>
             <Typography variant="h4" className="profile-name">
-              John Doe
+              Sophia Hernandez
             </Typography>
             <Typography variant="subtitle1" className="profile-title">
               Full Stack Developer
