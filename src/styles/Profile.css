@@ -2,173 +2,180 @@
 
 /* Global Styles */
 body {
-    background-color: #f5f7fa;
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-  }
-  
-  /* Container */
-  .profile-container {
-    margin-top: 40px;
-  }
-  
-  /* Paper (Profile Card) */
-  .profile-card {
-    padding: 40px;
-    background: linear-gradient(135deg, #ffffff 30%, #e0e7ff 100%);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Avatar */
+  background-color: #faf3e0 !important; /* Soft warm beige */
+  font-family: 'Roboto', sans-serif !important;
+  color: #4b3832 !important; /* Warm dark brown */
+}
+
+/* Container */
+.profile-container {
+  margin-top: 40px !important;
+}
+
+/* Paper (Profile Card) */
+.profile-card {
+  padding: 40px !important;
+  background: linear-gradient(135deg, #fffaf0 30%, #f0e1d2 100%) !important; /* Soft warm gradient */
+  border-radius: 15px !important;
+  box-shadow: 0 10px 30px rgba(75, 56, 50, 0.1) !important; /* Adjusted shadow color */
+}
+
+/* Avatar */
+.profile-avatar {
+  width: 150px !important;
+  height: 150px !important;
+  border: 5px solid #ffffff !important;
+  box-shadow: 0 5px 15px rgba(75, 56, 50, 0.1) !important;
+}
+
+/* Badge Edit Icon */
+.badge-edit-icon {
+  background-color: #d4a373 !important; /* Warm muted orange */
+  color: #fff !important;
+  border: 2px solid #ffffff !important;
+}
+
+.badge-edit-icon:hover {
+  background-color: #b5838d !important; /* Slightly darker warm tone on hover */
+}
+
+/* User Name */
+.profile-name {
+  font-weight: bold !important;
+  color: #4b3832 !important;
+}
+
+/* User Title */
+.profile-title {
+  color: #855446 !important; /* Warm medium brown */
+}
+
+/* Bio Text */
+.profile-bio {
+  margin-top: 20px !important;
+  line-height: 1.6 !important;
+  color: #6d5d5d !important; /* Muted warm gray */
+}
+
+/* Social Media Icons */
+.social-media-icons .MuiIconButton-root {
+  background-color: #fff5eb !important; /* Very light warm tone */
+  color: #d4a373 !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.social-media-icons .MuiIconButton-root:hover {
+  background-color: #d4a373 !important;
+  color: #ffffff !important;
+}
+
+/* Edit Profile Button */
+.edit-profile-button {
+  margin-top: 20px !important;
+  border-radius: 30px !important;
+  border: 2px solid #d4a373 !important;
+  color: #d4a373 !important;
+}
+
+.edit-profile-button:hover {
+  background-color: #d4a373 !important;
+  color: #ffffff !important;
+}
+
+/* Tabs */
+.profile-tabs .MuiTab-root {
+  font-weight: bold !important;
+  color: #d4a373 !important;
+}
+
+.profile-tabs .Mui-selected {
+  color: #b5838d !important;
+}
+
+/* Divider */
+.profile-divider {
+  margin: 40px 0 !important;
+  background-color: #e0d4c3 !important; /* Soft warm color */
+}
+
+/* Contact Information */
+.contact-info .MuiListItemIcon-root {
+  color: #d4a373 !important;
+}
+
+.contact-info .MuiListItemText-root {
+  color: #4b3832 !important;
+}
+
+/* Posts */
+.post-card {
+  margin-top: 20px !important;
+  border-radius: 15px !important;
+  background-color: #fffaf0 !important; /* Light warm background */
+}
+
+.post-card .MuiCardContent-root {
+  background-color: #fffaf0 !important;
+}
+
+.post-title {
+  font-weight: bold !important;
+  color: #4b3832 !important;
+}
+
+.post-content {
+  color: #6d5d5d !important;
+}
+
+/* Friends List */
+.friend-card {
+  text-align: center !important;
+  border-radius: 15px !important;
+  box-shadow: none !important;
+  background-color: #fff5eb !important; /* Light warm tone */
+  transition: transform 0.2s box-shadow 0.2s !important;
+}
+
+.friend-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 20px rgba(75, 56, 50, 0.1) !important;
+}
+
+.friend-avatar {
+  width: 80px !important;
+  height: 80px !important;
+  margin: 0 auto !important;
+}
+
+.friend-name {
+  margin-top: 10px !important;
+  font-weight: bold !important;
+  color: #4b3832 !important;
+}
+
+/* Photo Gallery */
+.photo-card {
+  border-radius: 15px !important;
+  overflow: hidden !important;
+  transition: transform 0.2s !important;
+}
+
+.photo-card:hover {
+  transform: scale(1.05) !important;
+}
+
+.photo-media {
+  height: 200px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
   .profile-avatar {
-    width: 150px !important;
-    height: 150px !important;
-    border: 5px solid #ffffff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 120px !important;
+    height: 120px !important;
   }
-  
-  /* Badge Edit Icon */
-  .badge-edit-icon {
-    background-color: #3f51b5;
-    color: #fff;
-    border: 2px solid #ffffff;
+
+  .profile-card {
+    padding: 20px !important;
   }
-  
-  /* User Name */
-  .profile-name {
-    font-weight: bold;
-    color: #2c3e50;
-  }
-  
-  /* User Title */
-  .profile-title {
-    color: #7f8c8d;
-  }
-  
-  /* Bio Text */
-  .profile-bio {
-    margin-top: 20px;
-    line-height: 1.6;
-  }
-  
-  /* Social Media Icons */
-  .social-media-icons .MuiIconButton-root {
-    background-color: #ffffff;
-    color: #3f51b5;
-    border: 1px solid #e0e0e0;
-  }
-  
-  .social-media-icons .MuiIconButton-root:hover {
-    background-color: #3f51b5;
-    color: #ffffff;
-  }
-  
-  /* Edit Profile Button */
-  .edit-profile-button {
-    margin-top: 20px;
-    border-radius: 30px;
-    border: 2px solid #3f51b5;
-    color: #3f51b5;
-  }
-  
-  .edit-profile-button:hover {
-    background-color: #3f51b5;
-    color: #ffffff;
-  }
-  
-  /* Tabs */
-  .profile-tabs .MuiTab-root {
-    font-weight: bold;
-    color: #3f51b5;
-  }
-  
-  .profile-tabs .Mui-selected {
-    color: #1a237e !important;
-  }
-  
-  /* Divider */
-  .profile-divider {
-    margin: 40px 0;
-  }
-  
-  /* Contact Information */
-  .contact-info .MuiListItemIcon-root {
-    color: #3f51b5;
-  }
-  
-  .contact-info .MuiListItemText-root {
-    color: #2c3e50;
-  }
-  
-  /* Posts */
-  .post-card {
-    margin-top: 20px;
-    border-radius: 15px;
-  }
-  
-  .post-card .MuiCardContent-root {
-    background-color: #ffffff;
-  }
-  
-  .post-title {
-    font-weight: bold;
-    color: #2c3e50;
-  }
-  
-  .post-content {
-    color: #7f8c8d;
-  }
-  
-  /* Friends List */
-  .friend-card {
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: none;
-    transition: transform 0.2s;
-  }
-  
-  .friend-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .friend-avatar {
-    width: 80px !important;
-    height: 80px !important;
-    margin: 0 auto;
-  }
-  
-  .friend-name {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #2c3e50;
-  }
-  
-  /* Photo Gallery */
-  .photo-card {
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.2s;
-  }
-  
-  .photo-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .photo-media {
-    height: 200px;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 600px) {
-    .profile-avatar {
-      width: 120px !important;
-      height: 120px !important;
-    }
-  
-    .profile-card {
-      padding: 20px;
-    }
-  }
-  
+}
