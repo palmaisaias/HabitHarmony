@@ -1,0 +1,174 @@
+/* Profile.css */
+
+/* Global Styles */
+body {
+    background-color: #f5f7fa;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+  }
+  
+  /* Container */
+  .profile-container {
+    margin-top: 40px;
+  }
+  
+  /* Paper (Profile Card) */
+  .profile-card {
+    padding: 40px;
+    background: linear-gradient(135deg, #ffffff 30%, #e0e7ff 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Avatar */
+  .profile-avatar {
+    width: 150px !important;
+    height: 150px !important;
+    border: 5px solid #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Badge Edit Icon */
+  .badge-edit-icon {
+    background-color: #3f51b5;
+    color: #fff;
+    border: 2px solid #ffffff;
+  }
+  
+  /* User Name */
+  .profile-name {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  /* User Title */
+  .profile-title {
+    color: #7f8c8d;
+  }
+  
+  /* Bio Text */
+  .profile-bio {
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Social Media Icons */
+  .social-media-icons .MuiIconButton-root {
+    background-color: #ffffff;
+    color: #3f51b5;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .social-media-icons .MuiIconButton-root:hover {
+    background-color: #3f51b5;
+    color: #ffffff;
+  }
+  
+  /* Edit Profile Button */
+  .edit-profile-button {
+    margin-top: 20px;
+    border-radius: 30px;
+    border: 2px solid #3f51b5;
+    color: #3f51b5;
+  }
+  
+  .edit-profile-button:hover {
+    background-color: #3f51b5;
+    color: #ffffff;
+  }
+  
+  /* Tabs */
+  .profile-tabs .MuiTab-root {
+    font-weight: bold;
+    color: #3f51b5;
+  }
+  
+  .profile-tabs .Mui-selected {
+    color: #1a237e !important;
+  }
+  
+  /* Divider */
+  .profile-divider {
+    margin: 40px 0;
+  }
+  
+  /* Contact Information */
+  .contact-info .MuiListItemIcon-root {
+    color: #3f51b5;
+  }
+  
+  .contact-info .MuiListItemText-root {
+    color: #2c3e50;
+  }
+  
+  /* Posts */
+  .post-card {
+    margin-top: 20px;
+    border-radius: 15px;
+  }
+  
+  .post-card .MuiCardContent-root {
+    background-color: #ffffff;
+  }
+  
+  .post-title {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .post-content {
+    color: #7f8c8d;
+  }
+  
+  /* Friends List */
+  .friend-card {
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: none;
+    transition: transform 0.2s;
+  }
+  
+  .friend-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .friend-avatar {
+    width: 80px !important;
+    height: 80px !important;
+    margin: 0 auto;
+  }
+  
+  .friend-name {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  /* Photo Gallery */
+  .photo-card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  
+  .photo-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .photo-media {
+    height: 200px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .profile-avatar {
+      width: 120px !important;
+      height: 120px !important;
+    }
+  
+    .profile-card {
+      padding: 20px;
+    }
+  }
+  
