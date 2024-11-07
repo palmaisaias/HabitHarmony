@@ -1,0 +1,85 @@
+/* Habits.css */
+
+/* Container */
+.habits-container {
+  margin-top: 40px;
+}
+
+.habits-title {
+  margin-bottom: 20px;
+  color: #4b3832;
+}
+
+.add-habit-button {
+  margin-bottom: 30px;
+  background-color: #d4a373;
+  color: #fff;
+}
+
+.add-habit-button:hover {
+  background-color: #b5838d;
+}
+
+/* Habit Card */
+.habit-card {
+  border-radius: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: #fff5eb;
+}
+
+.habit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(75, 56, 50, 0.1);
+}
+
+.habit-name {
+  color: #4b3832;
+  font-weight: bold;
+}
+
+.habit-description {
+  color: #6d5d5d;
+  margin-bottom: 15px;
+}
+
+/* Progress Bar */
+.progress-container {
+  margin-bottom: 15px;
+}
+
+.progress-text {
+  color: #6d5d5d;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  height: 10px !important;
+  border-radius: 5px;
+  background-color: #f0e1d2;
+}
+
+.progress-bar .MuiLinearProgress-barColorPrimary {
+  background-color: #d4a373;
+}
+
+/* Habit Actions */
+.habit-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.complete-button {
+  color: #d4a373;
+}
+
+.complete-button:hover {
+  color: #b5838d;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .habit-card {
+    margin-bottom: 20px;
+  }
+}

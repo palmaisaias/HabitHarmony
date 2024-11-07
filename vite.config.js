@@ -4,7 +4,6 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000, // Keep the current port
     open: true, // Automatically open the app in the browser
   },
   build: {
