@@ -8,7 +8,7 @@
   margin-top: 50px !important;
   width: 100vw !important;
   min-height: 100vh !important;
-  background: linear-gradient(135deg, #8e44ad, #3498db) !important;
+  background: linear-gradient(135deg, #955959, #ba9fd6) !important;
   color: white !important;
   font-family: Arial, sans-serif !important;
 }
@@ -109,21 +109,30 @@
   font-size: 1.8rem !important;
   color: #fff !important;
   text-align: center !important;
-  margin-top: 30px !important;
+  margin-top: 40px !important;
   background-color: #34495e !important;
-  padding: 20px !important;
-  border-radius: 8px !important;
+  padding: 30px 20px !important; /* Increased padding for top/bottom */
+  border-radius: 12px !important; /* Slightly more rounded corners */
+  max-width: 80% !important; /* Restrict width for better layout */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important; /* Adds subtle shadow for depth */
 }
 
 .restart-button {
-  margin-top: 20px !important;
-  padding: 12px 25px !important;
+  margin-top: 30px !important; /* Increased margin for more spacing from other elements */
+  padding: 15px 30px !important; /* Slightly larger padding for a more balanced button size */
+  padding-left: 20px !important;
+  margin-left: 10px !important;
   background-color: #e74c3c !important;
   color: white !important;
   border: none !important;
-  border-radius: 5px !important;
+  border-radius: 8px !important; /* Increased radius for a softer, more modern look */
   cursor: pointer !important;
-  transition: background-color 0.3s ease !important;
+  transition: background-color 0.3s ease, transform 0.1s ease !important; /* Added slight scaling effect */
+}
+
+.restart-button:hover {
+  background-color: #c0392b !important;
+  transform: scale(1.05) !important; /* Adds a slight zoom effect on hover */
 }
 
 .restart-button:hover {
