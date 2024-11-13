@@ -1,122 +1,156 @@
-// Quiz.jsx
-import React, { useState } from 'react';
-import { Container, Typography, Button } from '@mui/material';
-import '../styles/Quiz.css';
-
-const questions = [
-  {
-    question: 'How does tracking habits improve motivation?',
-    options: ['Helps visualize progress', 'Makes things harder', 'Adds stress', 'None of the above'],
-    answer: 'Helps visualize progress',
-  },
-  {
-    question: 'Which of the following is a benefit of tracking habits?',
-    options: ['Identifies bad patterns', 'Creates confusion', 'Wastes time', 'None of the above'],
-    answer: 'Identifies bad patterns',
-  },
-  {
-    question: 'Habit tracking can improve which of these aspects of your life?',
-    options: ['Physical health', 'Mental health', 'Productivity', 'All of the above'],
-    answer: 'All of the above',
-  },
-  {
-    question: 'What does consistent habit tracking help you build?',
-    options: ['Accountability', 'Forgetfulness', 'Laziness', 'Excuses'],
-    answer: 'Accountability',
-  },
-  {
-    question: 'Tracking habits helps in identifying what?',
-    options: ['Progress', 'Failures only', 'Only positive outcomes', 'None of the above'],
-    answer: 'Progress',
-  },
-  {
-    question: 'Why is it useful to set a goal when tracking habits?',
-    options: ['Gives direction', 'Makes it boring', 'Unnecessary pressure', 'None of the above'],
-    answer: 'Gives direction',
-  },
-  {
-    question: 'Habit tracking can lead to which of these?',
-    options: ['Increased discipline', 'More confusion', 'Lack of focus', 'None of the above'],
-    answer: 'Increased discipline',
-  },
-  {
-    question: 'Which of these helps in maintaining consistency?',
-    options: ['Tracking progress', 'Ignoring the habit', 'Being lazy', 'None of the above'],
-    answer: 'Tracking progress',
-  },
-  {
-    question: 'How does tracking habits affect self-awareness?',
-    options: ['Increases self-awareness', 'Decreases it', 'No effect', 'Confuses the mind'],
-    answer: 'Increases self-awareness',
-  },
-  {
-    question: 'What can tracking habits help you celebrate?',
-    options: ['Small wins', 'Nothing', 'Failures', 'Stress'],
-    answer: 'Small wins',
-  },
-];
+import React, { useState, useEffect } from "react";
+import "../styles/Quiz.css";
 
 const Quiz = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [questions] = useState([
+    {
+      questionText:
+        "How does tracking your habits help improve personal growth?",
+      options: [
+        "It allows you to see patterns and make adjustments",
+        "It helps you achieve goals instantly",
+        "It eliminates the need for planning",
+        "It reduces accountability",
+      ],
+      answer: "It allows you to see patterns and make adjustments",
+    },
+    {
+      questionText: "What is one of the main benefits of habit tracking?",
+      options: [
+        "You feel more productive and motivated",
+        "You can ignore small achievements",
+        "You avoid setting new goals",
+        "You increase your stress levels",
+      ],
+      answer: "You feel more productive and motivated",
+    },
+    {
+      questionText: "How can tracking your habits impact your health?",
+      options: [
+        "It encourages consistent healthy routines",
+        "It promotes procrastination",
+        "It reduces sleep quality",
+        "It discourages exercise",
+      ],
+      answer: "It encourages consistent healthy routines",
+    },
+    {
+      questionText:
+        "Why is it useful to keep a habit tracker for long-term goals?",
+      options: [
+        "It breaks down big goals into achievable steps",
+        "It makes goals more difficult to achieve",
+        "It only focuses on short-term rewards",
+        "It removes the need for goal-setting",
+      ],
+      answer: "It breaks down big goals into achievable steps",
+    },
+    {
+      questionText: "What effect does habit tracking have on self-discipline?",
+      options: [
+        "It strengthens self-discipline by creating accountability",
+        "It reduces motivation over time",
+        "It creates more distractions",
+        "It only affects physical health",
+      ],
+      answer: "It strengthens self-discipline by creating accountability",
+    },
+  ]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(null);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [timeRemaining, setTimeRemaining] = useState(10); // Timer for each question
 
-  const handleAnswerOptionClick = (option) => {
-    setSelectedAnswer(option);
+  useEffect(() => {
+    if (timeRemaining > 0) {
+      const timer = setTimeout(() => setTimeRemaining(timeRemaining - 1), 1000);
+      return () => clearTimeout(timer);
+    } else {
+      handleNextQuestion(); // Automatically move to the next question when time runs out
+    }
+  }, [timeRemaining]);
+
+  const handleOptionClick = (option) => {
+    setSelectedOption(option);
   };
 
   const handleNextQuestion = () => {
-    if (selectedAnswer === questions[currentQuestion].answer) {
+    if (selectedOption === questions[currentQuestionIndex].answer) {
       setScore(score + 1);
     }
-    setSelectedAnswer(null);
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
+    setSelectedOption(null);
+    if (currentQuestionIndex + 1 < questions.length) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setTimeRemaining(10); // Reset timer for the next question
     } else {
       setShowScore(true);
     }
   };
 
+  const handleRestartQuiz = () => {
+    setScore(0);
+    setCurrentQuestionIndex(0);
+    setSelectedOption(null);
+    setShowScore(false);
+    setTimeRemaining(10);
+  };
+
   return (
-    <Container className="quiz-container">
-      <Typography variant="h4" className="quiz-heading">
-        Habit Tracking Trivia Quiz
-      </Typography>
+    <div className="quiz-container">
+      <h1 className="quiz-heading">Quiz App</h1>
+
       {showScore ? (
         <div className="score-section">
           You scored {score} out of {questions.length}
+          <button className="restart-button" onClick={handleRestartQuiz}>
+            Restart Quiz
+          </button>
         </div>
       ) : (
-        <div className="question-section">
-          <Typography variant="h5" className="question-text">
-            {questions[currentQuestion].question}
-          </Typography>
-          <div className="options-container">
-            {questions[currentQuestion].options.map((option, index) => (
-              <Button
-                key={index}
-                variant="contained"
-                className={`option-button ${selectedAnswer === option ? 'selected' : ''}`}
-                onClick={() => handleAnswerOptionClick(option)}
-              >
-                {option}
-              </Button>
-            ))}
+        <>
+          <div className="progress-bar">
+            <div
+              className="progress"
+              style={{
+                width: `${
+                  ((currentQuestionIndex + 1) / questions.length) * 100
+                }%`,
+              }}
+            ></div>
           </div>
-          <Button
-            variant="contained"
-            color="primary"
+
+          <div className="timer">Time Remaining: {timeRemaining}s</div>
+
+          <div className="question-section">
+            <h2 className="question-text">
+              {questions[currentQuestionIndex].questionText}
+            </h2>
+            <div className="options-container">
+              {questions[currentQuestionIndex].options.map((option) => (
+                <button
+                  key={option}
+                  className={`option-button ${
+                    selectedOption === option ? "selected" : ""
+                  }`}
+                  onClick={() => handleOptionClick(option)}
+                >
+                  {option}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <button
             className="next-button"
             onClick={handleNextQuestion}
-            disabled={!selectedAnswer}
+            disabled={!selectedOption}
           >
             Next
-          </Button>
-        </div>
+          </button>
+        </>
       )}
-    </Container>
+    </div>
   );
 };
 
