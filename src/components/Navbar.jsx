@@ -13,6 +13,7 @@ const AppNavbar = () => {
           <Link to="/habits">Habits</Link>
           <Link to="/profile">Profile</Link>
           <Link to="/progress">Progress</Link> {/* Link to Progress page */}
+          <Link to="/quiz">Quiz</Link> {/* Link to Quiz page */}
         </div>
       </Container>
     </nav>

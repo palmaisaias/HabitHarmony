@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import Habits from '../pages/Habits';
 import Profile from '../pages/Profile';
 import Progress from '../pages/Progress'; // Import the new Progress page
+import Quiz from '../pages/Quiz'; // Import the new Quiz page
 import AppNavbar from '../components/Navbar';
 
 const AppRouter = () => {
@@ -15,6 +16,7 @@ const AppRouter = () => {
         <Route path="/habits" element={<Habits />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/progress" element={<Progress />} /> {/* Add Progress route */}
+        <Route path="/quiz" element={<Quiz />} /> {/* Add Quiz route */}
       </Routes>
     </Router>
   );
