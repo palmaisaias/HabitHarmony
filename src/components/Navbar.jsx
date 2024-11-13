@@ -12,10 +12,11 @@ const AppNavbar = () => {
           <Link to="/">Home</Link>
           <Link to="/habits">Habits</Link>
           <Link to="/profile">Profile</Link>
+          <Link to="/progress">Progress</Link> {/* Link to Progress page */}
         </div>
       </Container>
     </nav>
   );
-}
+};
 
 export default AppNavbar;

@@ -1,0 +1,27 @@
+/* Progress Page Styles */
+.progress-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.progress-chart {
+  margin-top: 20px;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.progress-heading {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.progress-description {
+  margin-top: 20px;
+  color: #666;
+  font-size: 1rem;
+}
