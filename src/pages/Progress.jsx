@@ -1,7 +1,30 @@
 import React from 'react';
 import { Container, Typography } from '@mui/material';
 import { Line } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler, // Import the Filler plugin
+} from 'chart.js';
 import '../styles/Progress.css'; // Import specific styles for Progress page
+
+// Register the necessary components including the Filler plugin
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+);
 
 const Progress = () => {
   const data = {
